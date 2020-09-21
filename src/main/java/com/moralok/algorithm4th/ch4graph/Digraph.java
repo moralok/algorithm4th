@@ -6,12 +6,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * 邻接表法
+ * 有向图
  *
  * @author moralok
- * @since 2020/9/16
+ * @since 2020/9/21 5:37 下午
  */
-public class Graph {
+public class Digraph {
 
     /**
      * 顶点数
@@ -29,7 +29,7 @@ public class Graph {
     private Set<Integer>[] adj;
 
     @SuppressWarnings("unchecked")
-    public Graph(int V) {
+    public Digraph(int V) {
         this.V = V;
         adj = (Set<Integer>[]) new Set[V];
         for (int i = 0; i < V; i++) {
@@ -37,7 +37,7 @@ public class Graph {
         }
     }
 
-    public Graph(In in) {
+    public Digraph(In in) {
         this(in.readInt());
         int E = in.readInt();
         for (int i = 0; i < E; i++) {
@@ -57,12 +57,21 @@ public class Graph {
 
     public void addEdge(int v, int w) {
         adj[v].add(w);
-        adj[w].add(v);
         E++;
     }
 
     public Iterable<Integer> adj(int v) {
         return adj[v];
+    }
+
+    public Digraph reverse() {
+        Digraph digraph = new Digraph(V);
+        for (int v = 0; v < V; v++) {
+            for (int w : adj(v)) {
+                digraph.addEdge(w, v);
+            }
+        }
+        return digraph;
     }
 
     @Override
