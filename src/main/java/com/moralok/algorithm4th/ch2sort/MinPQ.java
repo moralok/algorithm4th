@@ -29,6 +29,10 @@ public class MinPQ<Key extends Comparable<Key>> {
         swim(N);
     }
 
+    public Key min() {
+        return pq[1];
+    }
+
     public Key delMin() {
         Key min = pq[1];
         exch(1, N);
@@ -38,28 +42,28 @@ public class MinPQ<Key extends Comparable<Key>> {
         return min;
     }
 
-    public boolean less(int i, int j) {
+    private boolean less(int i, int j) {
         return pq[i].compareTo(pq[j]) < 0;
     }
 
-    public boolean greater(int i, int j) {
+    private boolean greater(int i, int j) {
         return pq[i].compareTo(pq[j]) > 0;
     }
 
-    public void exch(int i, int j) {
+    private void exch(int i, int j) {
         Key tmp = pq[i];
         pq[i] = pq[j];
         pq[j] = tmp;
     }
 
-    public void swim(int k) {
+    private void swim(int k) {
         while (k > 1 && less(k, k / 2)) {
             exch(k, k / 2);
             k /= 2;
         }
     }
 
-    public void sink(int k) {
+    private void sink(int k) {
         while (k <= N / 2) {
             int j = 2 * k;
             if (j + 1 <= N && less(j+1, j)) {
