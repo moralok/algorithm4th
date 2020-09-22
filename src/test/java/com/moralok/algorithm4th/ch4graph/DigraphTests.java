@@ -34,4 +34,13 @@ public class DigraphTests {
             }
         }
     }
+
+    @Test
+    public void testTransitiveClosure() {
+        System.out.println("测试顶点对的可达性");
+        Digraph digraph = new Digraph(new In(tinyDG));
+        TransitiveClosure transitiveClosure = new TransitiveClosure(digraph);
+        System.out.println(transitiveClosure.reachable(4, 11));
+        System.out.println(transitiveClosure.reachable(4, 0));
+    }
 }

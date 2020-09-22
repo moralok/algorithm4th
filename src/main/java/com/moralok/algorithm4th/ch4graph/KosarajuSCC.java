@@ -2,7 +2,7 @@ package com.moralok.algorithm4th.ch4graph;
 
 /**
  * 计算强连通分量的 Kosaraju 算法
- * 
+ *
  * @author moralok
  * @since 2020/9/22 10:28 上午
  */
