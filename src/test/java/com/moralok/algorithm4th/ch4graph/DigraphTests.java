@@ -27,7 +27,7 @@ public class DigraphTests {
         sources.add(1);
         sources.add(2);
         sources.add(6);
-        DirectedDfs reachable = new DirectedDfs(digraph, sources);
+        DirectedDFS reachable = new DirectedDFS(digraph, sources);
         for (int v = 0; v < digraph.V(); v++) {
             if (reachable.marked(v)) {
                 System.out.print(v + " ");

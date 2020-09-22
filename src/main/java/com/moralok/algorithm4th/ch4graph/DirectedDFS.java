@@ -6,16 +6,16 @@ package com.moralok.algorithm4th.ch4graph;
  * @author moralok
  * @since 2020/9/21
  */
-public class DirectedDfs {
+public class DirectedDFS {
 
     private boolean[] marked;
 
-    public DirectedDfs(Digraph G, int s) {
+    public DirectedDFS(Digraph G, int s) {
         marked = new boolean[G.V()];
         dfs(G, s);
     }
 
-    public DirectedDfs(Digraph G, Iterable<Integer> sources) {
+    public DirectedDFS(Digraph G, Iterable<Integer> sources) {
         marked = new boolean[G.V()];
         for (int s : sources) {
             dfs(G, s);
