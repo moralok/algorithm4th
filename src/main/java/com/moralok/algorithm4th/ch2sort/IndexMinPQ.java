@@ -39,10 +39,11 @@ public class IndexMinPQ<Key extends Comparable<Key>> {
     }
 
     public void insert(int k, Key key) {
+        // 各种操作里的顺序和细节，不注意容易出错啊
         N++;
         qp[k] = N;
         pq[N] = k;
-        keys[N] = key;
+        keys[k] = key;
         swim(N);
     }
 
