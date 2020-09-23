@@ -19,7 +19,7 @@ public class UFTests {
     /**
      * 测试到70万条边时，weighted quick union 也没优于 quick union。。。
      */
-    private final int max = 700000;
+    private final int max = 100000;
 
     @Test
     public void testQuickFind() {
