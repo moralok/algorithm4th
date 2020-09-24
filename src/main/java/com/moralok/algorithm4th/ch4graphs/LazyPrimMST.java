@@ -22,7 +22,7 @@ public class LazyPrimMST {
     public LazyPrimMST(EdgeWeightedGraph G) {
         marked = new boolean[G.V()];
         mst = new LinkedList<>();
-        pq = new MinPQ<>(G.E() + 1);
+        pq = new MinPQ<>(G.E());
 
         visit(G, 0);
         while (!pq.isEmpty()) {
