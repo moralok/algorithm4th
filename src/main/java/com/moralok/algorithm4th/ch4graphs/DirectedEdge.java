@@ -6,7 +6,7 @@ package com.moralok.algorithm4th.ch4graphs;
  * @author moralok
  * @since 2020/9/24 2:27 下午
  */
-public class DirectedEdge {
+public class DirectedEdge implements Comparable<DirectedEdge> {
 
     private double weight;
 
@@ -30,6 +30,11 @@ public class DirectedEdge {
 
     public int to() {
         return w;
+    }
+
+    @Override
+    public int compareTo(DirectedEdge that) {
+        return Double.compare(this.weight, that.weight);
     }
 
     @Override
