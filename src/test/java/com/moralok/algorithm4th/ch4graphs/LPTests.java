@@ -11,21 +11,28 @@ import org.junit.Test;
 public class LPTests {
 
     private final String tinyEWDAG = "edu/princeton/cs/algs4/data/tinyEWDAG.txt";
+    private final String jobsPC = "edu/princeton/cs/algs4/data/jobsPC.txt";
 
     @Test
     public void testAcyclicSP() {
         EdgeWeightedDigraph G = new EdgeWeightedDigraph(new In(tinyEWDAG));
         int s = 5;
-        AcyclicLP sp = new AcyclicLP(G, s);
+        AcyclicLP lp = new AcyclicLP(G, s);
         for (int t = 0; t < G.V(); t++) {
             StdOut.print(s + " to " + t);
-            StdOut.printf("(%4.2f): ", sp.distTo(t));
-            if (sp.hasPathTo(t)) {
-                for (DirectedEdge e : sp.pathTo(t)) {
+            StdOut.printf("(%4.2f): ", lp.distTo(t));
+            if (lp.hasPathTo(t)) {
+                for (DirectedEdge e : lp.pathTo(t)) {
                     StdOut.print(e + " ");
                 }
             }
             StdOut.println();
         }
+    }
+
+    @Test
+    public void testCPM() {
+        CPM cpm = new CPM(new In(jobsPC));
+        cpm.print();
     }
 }
