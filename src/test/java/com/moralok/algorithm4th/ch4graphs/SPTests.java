@@ -15,6 +15,7 @@ public class SPTests {
     private final String tinyEWDAG = "edu/princeton/cs/algs4/data/tinyEWDAG.txt";
     private final String tinyEWDn = "edu/princeton/cs/algs4/data/tinyEWDn.txt";
     private final String tinyEWDnc = "edu/princeton/cs/algs4/data/tinyEWDnc.txt";
+    private final String rates = "edu/princeton/cs/algs4/data/rates.txt";
 
     @Test
     public void testDijkstraSP() {
@@ -84,6 +85,31 @@ public class SPTests {
                     }
                 }
                 StdOut.println();
+            }
+        }
+    }
+
+    @Test
+    public void testArbitrage() {
+        In in = new In(rates);
+        int V = in.readInt();
+        String[] name = new String[V];
+        EdgeWeightedDigraph G = new EdgeWeightedDigraph(V);
+        for (int v = 0; v < V; v++) {
+            name[v] = in.readString();
+            for (int w = 0; w < V; w++) {
+                double rate = in.readDouble();
+                DirectedEdge e = new DirectedEdge(v, w, -Math.log(rate));
+                G.addEdge(e);
+            }
+        }
+        BellmanFordSP sp = new BellmanFordSP(G, 0);
+        if (sp.hasNegativeCycle()) {
+            double stake = 1000.0;
+            for (DirectedEdge e : sp.negativeCycle()) {
+                StdOut.printf("%10.5f %s", stake, name[e.from()]);
+                stake *= Math.exp(-e.weight());
+                StdOut.printf(" = %10.5f %s\n", stake, name[e.to()]);
             }
         }
     }
