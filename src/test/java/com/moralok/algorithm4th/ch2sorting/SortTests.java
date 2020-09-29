@@ -2,9 +2,8 @@ package com.moralok.algorithm4th.ch2sorting;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Stopwatch;
-import org.junit.Assert;
-import org.junit.Test;
-
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import java.util.Arrays;
 
 /**
@@ -24,11 +23,11 @@ public class SortTests {
         String file = _32Kints;
         In in = new In(file);
         Integer[] integers = Arrays.stream(in.readAllInts()).boxed().toArray(Integer[]::new);
-        Assert.assertFalse(BaseSortTemplate.isSorted(integers));
+        Assertions.assertFalse(BaseSortTemplate.isSorted(integers));
         Stopwatch stopwatch = new Stopwatch();
         Selection.sort(integers);
         System.out.println(file + " 选择排序，耗时 " + stopwatch.elapsedTime());
-        Assert.assertTrue(BaseSortTemplate.isSorted(integers));
+        Assertions.assertTrue(BaseSortTemplate.isSorted(integers));
     }
 
     @Test
@@ -36,11 +35,11 @@ public class SortTests {
         String file = _32Kints;
         In in = new In(file);
         Integer[] integers = Arrays.stream(in.readAllInts()).boxed().toArray(Integer[]::new);
-        Assert.assertFalse(BaseSortTemplate.isSorted(integers));
+        Assertions.assertFalse(BaseSortTemplate.isSorted(integers));
         Stopwatch stopwatch = new Stopwatch();
         Insertion.sort(integers);
         System.out.println(file + " 插入排序，耗时 " + stopwatch.elapsedTime());
-        Assert.assertTrue(BaseSortTemplate.isSorted(integers));
+        Assertions.assertTrue(BaseSortTemplate.isSorted(integers));
     }
 
     @Test
@@ -48,11 +47,11 @@ public class SortTests {
         String file = _32Kints;
         In in = new In(file);
         Integer[] integers = Arrays.stream(in.readAllInts()).boxed().toArray(Integer[]::new);
-        Assert.assertFalse(BaseSortTemplate.isSorted(integers));
+        Assertions.assertFalse(BaseSortTemplate.isSorted(integers));
         Stopwatch stopwatch = new Stopwatch();
         Shell.sort(integers);
         System.out.println(file + " 希尔排序，耗时 " + stopwatch.elapsedTime());
-        Assert.assertTrue(BaseSortTemplate.isSorted(integers));
+        Assertions.assertTrue(BaseSortTemplate.isSorted(integers));
     }
 
     @Test
@@ -60,11 +59,11 @@ public class SortTests {
         String file = _32Kints;
         In in = new In(file);
         Integer[] integers = Arrays.stream(in.readAllInts()).boxed().toArray(Integer[]::new);
-        Assert.assertFalse(BaseSortTemplate.isSorted(integers));
+        Assertions.assertFalse(BaseSortTemplate.isSorted(integers));
         Stopwatch stopwatch = new Stopwatch();
         Merge.sort(integers);
         System.out.println(file + " 归并排序1，耗时 " + stopwatch.elapsedTime());
-        Assert.assertTrue(BaseSortTemplate.isSorted(integers));
+        Assertions.assertTrue(BaseSortTemplate.isSorted(integers));
     }
 
     @Test
@@ -72,11 +71,11 @@ public class SortTests {
         String file = _32Kints;
         In in = new In(file);
         Integer[] integers = Arrays.stream(in.readAllInts()).boxed().toArray(Integer[]::new);
-        Assert.assertFalse(BaseSortTemplate.isSorted(integers));
+        Assertions.assertFalse(BaseSortTemplate.isSorted(integers));
         Stopwatch stopwatch = new Stopwatch();
         MergeBu.sort(integers);
         System.out.println(file + " 归并排序2，耗时 " + stopwatch.elapsedTime());
-        Assert.assertTrue(BaseSortTemplate.isSorted(integers));
+        Assertions.assertTrue(BaseSortTemplate.isSorted(integers));
     }
 
     @Test
@@ -84,11 +83,11 @@ public class SortTests {
         String file = _32Kints;
         In in = new In(file);
         Integer[] integers = Arrays.stream(in.readAllInts()).boxed().toArray(Integer[]::new);
-        Assert.assertFalse(BaseSortTemplate.isSorted(integers));
+        Assertions.assertFalse(BaseSortTemplate.isSorted(integers));
         Stopwatch stopwatch = new Stopwatch();
         Quick.sort(integers);
         System.out.println(file + " 快速排序，耗时 " + stopwatch.elapsedTime());
-        Assert.assertTrue(BaseSortTemplate.isSorted(integers));
+        Assertions.assertTrue(BaseSortTemplate.isSorted(integers));
     }
 
     @Test
@@ -96,10 +95,10 @@ public class SortTests {
         String file = _32Kints;
         In in = new In(file);
         Integer[] integers = Arrays.stream(in.readAllInts()).boxed().toArray(Integer[]::new);
-        Assert.assertFalse(BaseSortTemplate.isSorted(integers));
+        Assertions.assertFalse(BaseSortTemplate.isSorted(integers));
         Stopwatch stopwatch = new Stopwatch();
         Heap.sort(integers);
         System.out.println(file + " 堆排序，耗时 " + stopwatch.elapsedTime());
-        Assert.assertTrue(BaseSortTemplate.isSorted(integers));
+        Assertions.assertTrue(BaseSortTemplate.isSorted(integers));
     }
 }

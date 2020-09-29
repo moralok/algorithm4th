@@ -1,6 +1,6 @@
 package com.moralok.algorithm4th.ch2sorting;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author moralok

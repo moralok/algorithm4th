@@ -2,7 +2,7 @@ package com.moralok.algorithm4th.ch4graphs;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author moralok

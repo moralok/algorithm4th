@@ -1,7 +1,5 @@
 package com.moralok.algorithm4th.ch4graphs;
 
-import org.junit.Assert;
-
 import java.util.LinkedList;
 
 /**
@@ -24,7 +22,6 @@ public class AcyclicSP {
         }
         distTo[s] = 0.0;
         Topological topological = new Topological(G);
-        Assert.assertTrue("该图不是无环图", topological.isDAG());
         for (int v : topological.order()) {
             relax(G, v);
         }
