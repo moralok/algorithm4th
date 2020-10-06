@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
+ * 基于单词查找树的符号表
+ *
  * @author moralok
  * @since 2020/10/6
  */
