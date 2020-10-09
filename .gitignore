@@ -33,3 +33,4 @@ build/
 .vscode/
 /spy.log
 /src/main/resources/edu/princeton/cs/algs4/data/largeUF.txt
+/src/main/resources/edu/princeton/cs/algs4/data/leipzig1M.txt
