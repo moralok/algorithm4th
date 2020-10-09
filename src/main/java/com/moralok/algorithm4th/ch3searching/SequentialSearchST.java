@@ -78,7 +78,7 @@ public class SequentialSearchST<Key, Value> {
      */
     public void delete(Key key) {
         if (key == null) {
-            throw new IllegalArgumentException("argument to delete is null");
+            throw new IllegalArgumentException("argument to delete() is null");
         }
         first = delete(first, key);
     }
