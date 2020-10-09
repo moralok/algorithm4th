@@ -6,24 +6,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  * @author moralok
- * @since 2020/10/9 3:05 下午
+ * @since 2020/10/9 5:46 下午
  */
-class BinarySearchSTTests {
+class BSTTests {
 
     private String tinyST;
     private String tale;
-    private BinarySearchST<String, Integer> st;
+    private BST<String, Integer> st;
 
     @BeforeEach
     void setUp() {
         tinyST = "edu/princeton/cs/algs4/data/tinyST.txt";
         tale = "edu/princeton/cs/algs4/data/tale.txt";
         In in = new In(tinyST);
-        st = new BinarySearchST<>(100);
+        st = new BST<>();
         while (!in.isEmpty()) {
             String word = in.readString();
             if (st.contains(word)) {
@@ -38,7 +37,7 @@ class BinarySearchSTTests {
     void testFrequencyCounter() {
         int minLength = 8;
         In in = new In(tale);
-        BinarySearchST<String, Integer> st = new BinarySearchST<>(1000);
+        BST<String, Integer> st = new BST<>();
         while (!in.isEmpty()) {
             String word = in.readString();
             if (word.length() < minLength) {
